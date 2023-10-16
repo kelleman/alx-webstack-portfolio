@@ -11,12 +11,12 @@ app.use(express.urlencoded({ extended: true }));
 
 
 
-
+// routes prefix
 app.use('/api/v1', userRoutes);
 app.set('view engine', 'ejs')
 
-// routes prefix
-app.use('/', require('./routes/apiRoutes'));
+
+// app.use('/', require('./routes/userRoutes'));
 
 
 const port = process.env.PORT || 3030;
