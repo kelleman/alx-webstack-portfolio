@@ -22,17 +22,17 @@ const userSchema = new Schema({
   },
   password: {
     type: String,
-    required: true
+    required: [true, "password length mus be 8 characters and above"],
   },
-  phone: {
+  phone: { 
     type: String,
     required: true
   },
-  role: {
-    type: String,
-    enum: ['Inhabitant', 'Visitor', 'Admin'],
-    default: 'Visitor'
-  },
+  // role: {
+  //   type: String,
+  //   enum: ['Inhabitant', 'Visitor', 'Admin'],
+  //   default: 'Visitor'
+  // },
   
 }, {
   timestamps: true 
