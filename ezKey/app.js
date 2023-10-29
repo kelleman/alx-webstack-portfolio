@@ -3,6 +3,7 @@ const app = express();
 const cors = require('cors');
 const db = require('./config/connection');
 const userRoutes = require('./routes/userRoutes');
+const accessCodeRoutes = require('./routes/accessCodeRoutes');
 require('dotenv').config();
 
 
@@ -13,6 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // routes prefix
 app.use('/api/v1', userRoutes);
+app.use('/api/v1', accessCodeRoutes);
 app.set('view engine', 'ejs')
 
 
