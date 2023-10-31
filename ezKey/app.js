@@ -4,6 +4,7 @@ const cors = require('cors');
 const db = require('./config/connection');
 const userRoutes = require('./routes/userRoutes');
 const accessCodeRoutes = require('./routes/accessCodeRoutes');
+const uiRoutes = require('./routes/uiRoutes');
 require('dotenv').config();
 
 
@@ -20,6 +21,7 @@ app.set('views', 'views');
 // routes prefix
 app.use('/api/v1', userRoutes);
 app.use('/api/v1', accessCodeRoutes);
+app.use('/', uiRoutes);
 app.set('view engine', 'ejs')
 
 
