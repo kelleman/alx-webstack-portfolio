@@ -10,13 +10,13 @@ function sendOTP(email, otp) {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'kellemanatser@gmail.com',
-      pass: 'hsobzfbbgocooqoa',
+      user: process.env.USER,
+      pass: process.env.PASS,
     },
   });
 
   const mailOptions = {
-    from: 'kellemanatser@gmail.com',
+    from: process.env.USER,
     to: email,
     subject: 'OTP for Registration',
     text: `Your OTP for registration is: ${otp}`,
@@ -35,13 +35,13 @@ function sendNewOTP(email, otp) {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'kellemanatser@gmail.com',
-      pass: 'hsobzfbbgocooqoa',
+      user: process.env.USER,
+      pass: process.env.PASS,
     },
   });
 
   const mailOptions = {
-    from: 'kellemanatser@gmail.com',
+    from: process.env.USER,
     to: email,
     subject: 'New OTP for Registration',
     text: `Your new OTP for registration is: ${otp}`,
