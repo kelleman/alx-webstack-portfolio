@@ -1,0 +1,90 @@
+.hero {
+    height: 100vh;
+    padding-top: 87px;
+    display: flex;
+    background-image: url('/img/bg1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.hero img {
+    width: 100%;
+    padding-right: 50px !important;
+    padding-left: 0px !important;
+    display: none;
+}
+
+.story {
+    padding-bottom: 20px;
+    color: rgb(26, 26, 26);
+}
+
+.hero .greenbth {
+    --bs-btn-padding-y: .4rem;
+    --bs-btn-padding-x: 4.5rem;
+    --bs-btn-bg: #02ad88;
+    --bs-btn-color: rgb(228, 228, 228);
+    --bs-btn-font-size: 1.3rem;
+    --bs-btn-border-radius: .2rem;
+    width: 100%;
+}
+
+/*div.col-xl-6.col-lg-6.col-md-12 {
+    padding-left: 0px;
+}*/
+.hero form div.structure {
+    display: flex;
+    flex-flow: column;
+    padding: 50px;
+    background-color: white;
+    border-radius: 5px;
+    max-width: 500px;
+    margin: auto;
+}
+
+div.structure input {
+    margin-bottom: 20px;
+    padding: 7px;
+    font-size: 18px;
+    border-radius: 3px;
+    border: solid 0.5px rgb(160, 160, 160);
+}
+/*.features div {
+    padding: 20px;
+}*/
+@media (min-width: 992px) {
+    /* Large screens (wider than 992px) */
+    .hero .greenbth {
+        --bs-btn-padding-y: 1rem;
+        --bs-btn-padding-x: 3.7rem;
+        --bs-btn-bg: #02ad88;
+        --bs-btn-color: rgb(228, 228, 228);
+        --bs-btn-font-size: 1.5rem;
+        --bs-btn-border-radius: .2rem;
+    }
+    .hero img {
+        width: 100%;
+        padding-top: 80px;
+        padding-right: 0px !important;
+        padding-left: 20px !important;
+        display: block;
+    }
+
+    .plpr-40 {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .hero {
+        height: 100vh;
+        padding-top: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 1184px) {
+    .hero img {
+        padding-top: 0px;
+    }
+}

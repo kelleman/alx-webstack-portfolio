@@ -1,0 +1,164 @@
+.keyfeatures  {
+    background-image: url('/img/bg1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 60px 0px ;
+}
+.hero {
+    height: 73vh;
+    padding-top: 87px;
+    display: flex;
+    background-image: url('/img/bg3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.about {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.info {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-flow: column;
+    /*background-color: #02ad881c;
+    backdrop-filter: blur(4px)*/
+}
+
+.hero img {
+    width: 100%;
+    padding-right: 50px !important;
+    padding-left: 0px !important;
+    display: none;
+}
+
+.story {
+    padding-bottom: 20px;
+    color: white;
+    /*text-align: center*/
+}
+
+.hero .greenbth {
+    --bs-btn-padding-y: .9rem;
+    --bs-btn-padding-x: 4.5rem;
+    --bs-btn-bg: #02ad88;
+    --bs-btn-color: rgb(228, 228, 228);
+    --bs-btn-font-size: 1.3rem;
+    --bs-btn-border-radius: .2rem;
+}
+
+/*div.col-xl-6.col-lg-6.col-md-12 {
+    padding-left: 0px;
+}*/
+
+.btnparent :nth-child(1){
+    margin-right: 10px;
+}
+
+.info h1 {
+    font-size: 40px;
+}
+
+.info span {
+    font-weight: 100;
+    font-size: 40px;
+}
+
+.features {
+    height: 200px;
+    text-align: center;
+}
+
+.features div{
+    background-color: rgba(247, 247, 247, 0.747);
+    border-radius: 8px;
+    height: 100%;
+}
+
+.features div:hover {
+    background-color: #02ad88;
+    color: white;
+}
+
+.features div:hover i{
+    color: white !important;
+}
+
+.features i{
+    font-size: 3rem;
+    color: #02ad88;
+    padding: 0 0 20px;
+}
+
+.howitworks {
+    margin-top: 50px;
+}
+
+footer {
+    color: white;
+    background-color: #02ad88;
+    height: 200px;
+    display: flex;
+    align-items: center;
+}
+/*.features div {
+    padding: 20px;
+}*/
+@media (min-width: 992px) {
+    /* Large screens (wider than 992px) */
+    .hero .greenbth {
+        --bs-btn-padding-y: 1rem;
+        --bs-btn-padding-x: 3.7rem;
+        --bs-btn-bg: #02ad88;
+        --bs-btn-color: rgb(228, 228, 228);
+        --bs-btn-font-size: 1.5rem;
+        --bs-btn-border-radius: .2rem;
+    }
+    .hero img {
+        width: 100%;
+        padding-top: 80px;
+        padding-right: 0px !important;
+        padding-left: 20px !important;
+        display: block;
+    }
+
+    .plpr-40 {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .hero {
+        height: 100vh;
+        padding-top: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .features {
+        height: 330px;
+    }
+}
+
+@media (max-width: 1184px) {
+    .hero img {
+        padding-top: 0px;
+    }
+    .features {
+        height: 400px;
+    }
+
+    .features div{
+        display: flex;
+        flex-flow: column;
+        /*justify-content: center;*/
+        align-items: center;
+    }
+
+    .features div p{
+        max-width: 450px;
+    }
+}
