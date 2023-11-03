@@ -97,12 +97,8 @@
     margin-top: 50px;
 }
 
-footer {
-    color: white;
-    background-color: #02ad88;
-    height: 200px;
-    display: flex;
-    align-items: center;
+.features div {
+    justify-content: center;
 }
 /*.features div {
     padding: 20px;
@@ -140,6 +136,9 @@ footer {
 
     .features {
         height: 330px;
+    }
+    .features div {
+        justify-content: start;
     }
 }
 

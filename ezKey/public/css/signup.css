@@ -1,10 +1,11 @@
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     padding-top: 87px;
     display: flex;
     background-image: url('/img/bg1.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    padding: 160px 0;
 }
 .hero img {
     width: 100%;
@@ -37,7 +38,7 @@
     padding: 50px;
     background-color: white;
     border-radius: 5px;
-    max-width: 500px;
+    max-width: 600px;
     margin: auto;
 }
 
@@ -54,7 +55,7 @@ div.structure input {
 @media (min-width: 992px) {
     /* Large screens (wider than 992px) */
     .hero .greenbth {
-        --bs-btn-padding-y: 1rem;
+        --bs-btn-padding-y: .4rem;
         --bs-btn-padding-x: 3.7rem;
         --bs-btn-bg: #02ad88;
         --bs-btn-color: rgb(228, 228, 228);
@@ -75,8 +76,8 @@ div.structure input {
     }
 
     .hero {
-        height: 100vh;
-        padding-top: 0px;
+        min-height: 100vh;
+        padding: 160px 0;
         display: flex;
         justify-content: center;
         align-items: center;
