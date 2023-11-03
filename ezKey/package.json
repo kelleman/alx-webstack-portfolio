@@ -24,6 +24,9 @@
   "description": "",
   "dependencies": {
     "bcrypt": "^5.1.1",
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "nodemailer": "^6.9.7",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "uuid": "^9.0.1"
   }
 }
