@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const dashBoardController = require('../controllers/dashBoardController');
 const { authenticateToken } = require('../middleware/authMiddleware.js');
 
 router.get('/', (req, res) => {
@@ -21,6 +22,9 @@ router.get('/dashboard', (req, res) => {
 router.get('/trackcode', (req, res) => {
     res.render('trackcode'); // This will render 'views/trackcode'ejs'
 });
+
+router.get('/dashboard', dashBoardController.dashBoard)
+
 
 
 module.exports = router;

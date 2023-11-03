@@ -1,26 +1,81 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Welcome to My Website</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>Welcome to My Website</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
-        </ul>
-    </nav>
-    <main>
-        <h2>Welcome to our website</h2>
-        <p>This is a basic example of an EJS template.</p>
-    </main>
-    <footer>
-        <p>&copy; 2023 My Website</p>
-    </footer>
-</body>
+
+<%- include('head.ejs', { cssfile: 'dashboard.css' }) %>
+
+    <body>
+        <%- include('nav.ejs') %>
+            <main>
+                <div class="hero">
+                    <div class="dashboard">
+                        <div class="container-lg row d-flex align-items-lg-center justify-content-center">
+                            <div class="col-xl-6 col-lg-6 col-md-12">
+                                <form class="">
+                                    <div class="structure">
+                                        <h1>Generate access code</h1>
+                                        <label for="visitorsname">Visitors name</label>
+                                        <input type="text" name="visitorsname" id="visitorsname"
+                                            placeholder="Input visitors name" required>
+
+                                        <label for="duration">Duration</label>
+                                        <input type="range" name="duration" id="duration" min="0" max="5" step="1">
+                                        <p><span id="selectedHour">1</span> hours</p>
+
+                                        <div class="btnparent">
+                                            <button onclick="window.location.href = '/sihnup'" type="button"
+                                                class="btn greenbth">Generate</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class=" history col-xg-6 col-lg-6 col-md-12">
+                                <div class="">
+                                    <h2>Access Code History</h2>
+                                    <div class="table container-fluid">
+                                        <div class="title row row-col-1">
+                                            <div class="sn col">Sn</div>
+
+                                            <div class="visitorsname col">Name</div>
+                                            <div class="code col">Code</div>
+                                            <div class="status col">Status</div>
+                                            <hr>
+                                        </div>
+                                        <div class="createdcode row row-col-1">
+                                            <div class="sn col">1</div>
+                                            <div class="visitorsname col">James</div>
+                                            <div class="code col">12345</div>
+                                            <div class="status inactive col">Inactive</div>
+                                            <hr>
+                                        </div>
+                                        <div class="createdcode row row-col-1">
+                                            <div class="sn col">2</div>
+                                            <div class="visitorsname col">dJames</div>
+                                            <div class="code col">12d34dfg5</div>
+                                            <div class="status active col">Active</div>
+                                            <hr>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </main>
+            <footer>
+                <div class="container-md ">
+                    <p>&copy; 2023 ezKey</p>
+                </div>
+            </footer>
+            <script>
+                const hourlyRange = document.getElementById("duration");
+                const selectedHour = document.getElementById("selectedHour");
+                selectedHour.textContent = hourlyRange.value;
+                hourlyRange.addEventListener("input", function () {
+                    const selectedValue = hourlyRange.value;
+                    selectedHour.textContent = selectedValue;
+                });
+            </script>
+    </body>
+
 </html>

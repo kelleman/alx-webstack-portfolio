@@ -1,0 +1,92 @@
+.hero {
+    min-height: 100vh;
+    padding-top: 87px;
+    display: flex;
+    background-image: url('/img/bg1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 160px 0;
+}
+
+.dashboard {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.history {
+    align-self: start;
+    margin-top: 63px;
+    padding: 0px 13.5px;
+}
+
+.status.active {
+    color: green;
+}
+
+.status.inactive {
+    color: red;
+}
+
+.history .table {
+    overflow: scroll;
+    height: 300px;
+    padding-right: 40px;
+}
+
+.hero .greenbth {
+    --bs-btn-padding-y: .4rem;
+    --bs-btn-padding-x: 4.5rem;
+    --bs-btn-bg: #02ad88;
+    --bs-btn-color: rgb(228, 228, 228);
+    --bs-btn-font-size: 1.3rem;
+    --bs-btn-border-radius: .2rem;
+    width: 100%;
+}
+
+/*div.col-xl-6.col-lg-6.col-md-12 {
+    padding-left: 0px;
+}*/
+.hero form div.structure {
+    display: flex;
+    flex-flow: column;
+    padding: 50px;
+    background-color: white;
+    border-radius: 5px;
+    /*max-width: 600px;*/
+    margin: auto;
+}
+
+div.structure input {
+    margin-bottom: 20px;
+    padding: 7px;
+    font-size: 18px;
+    border-radius: 3px;
+    border: solid 0.5px rgb(160, 160, 160);
+}
+/*.features div {
+    padding: 20px;
+}*/
+@media (min-width: 992px) {
+    /* Large screens (wider than 992px) */
+    .hero .greenbth {
+        --bs-btn-padding-y: .4rem;
+        --bs-btn-padding-x: 3.7rem;
+        --bs-btn-bg: #02ad88;
+        --bs-btn-color: rgb(228, 228, 228);
+        --bs-btn-font-size: 1.5rem;
+        --bs-btn-border-radius: .2rem;
+    }
+    .hero {
+        min-height: 100vh;
+        padding: 160px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 1184px) {
+
+}
