@@ -4,43 +4,78 @@
 <%- include('head.ejs', { cssfile: 'signup.css' }) %>
 
     <body>
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Verify your email</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex flex-column justify-content-center align-items-center">
+                        <p>An OTP was sent to "<span class="otpemail">email</span>" please provide it to proceed.</p>
+                        <form id="otpform">
+                            <div class="struct">
+                                <div class="frm-grp">
+                                    <input name="otp" type="tel" class="form-control text-center" id="otp"
+                                        maxlength="6">
+                                </div>
+                            </div>
+                        </form>
+                        <a href="">Rrsend OTP</a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <%- include('nav.ejs') %>
             <main>
                 <div class="hero">
                     <div class="m-auto container-lg row d-flex align-items-lg-center justify-content-center">
                         <div class="col-xl-6 col-lg-6 col-md-10">
-                            <form class="">
+                            <form class="" id="register">
                                 <div class="structure">
                                     <h1>Signup</h1>
-                                    <label for="firstname">First name</label>
-                                    <input type="text" name="firstname" id="firstname"
-                                        placeholder="Enter your first name" required>
 
-                                    <label for="lastname">Last name</label>
-                                    <input type="text" name="lastname" id="lastname" placeholder="Enter your last name"
-                                        required>
-
-                                    <label for="username">Username</label>
-                                    <input type="text" name="username" id="username" placeholder="Choose a username"
-                                        required>
-
-                                    <label for="email">Email</label>
-                                    <input type="email" name="email" id="email" placeholder="Enter your email address"
-                                        required>
-
-                                    <label for="password">Password</label>
-                                    <input type="password" name="password" id="password" placeholder="Create a password"
-                                        required>
-
-                                    <label for="phone">Phone</label>
-                                    <input type="tel" name="phone" id="phone" placeholder="Enter your phone number"
-                                        required>
-
-                                    <div class="btnparent">
-                                        <button onclick="window.location.href = '/sihnup'" type="button"
-                                            class="btn greenbth">Signup</button>
+                                    <div class="form-group">
+                                        <label for="firstname">First name</label>
+                                        <input type="text" name="firstname" id="firstname"
+                                            placeholder="Enter your first name" required>
                                     </div>
-                                    <p>Already have an account? <br> Click this <a href="/login">link</a> to login</p>
+                                    <div class="form-group">
+                                        <label for="lastname">Last name</label>
+                                        <input type="text" name="lastname" id="lastname"
+                                            placeholder="Enter your last name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="username">Username</label>
+                                        <input type="text" name="username" id="username" placeholder="Choose a username"
+                                            required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" name="email" id="email"
+                                            placeholder="Enter your email address" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input type="password" name="password" id="password"
+                                            placeholder="Create a password" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone">Phone</label>
+                                        <input type="tel" name="phone" id="phone" placeholder="Enter your phone number"
+                                            required>
+                                    </div>
+
+                                    <div id="name-error"></div>
+                                    <div class="btnparent">
+                                        <button type="button" class="btn greenbth" id="submit">Signup</button>
+                                        <!-- <button type="button" class="btn greenbth" data-bs-toggle="modal"
+                                            data-bs-target="#staticBackdrop" id="submit">Signup</button> -->
+                                    </div>
+                                    <p>Already have an account? <br> Click this <a href="/login">link</a> to login
+                                    </p>
                                 </div>
                             </form>
                         </div>
@@ -49,13 +84,17 @@
                         </div>
                     </div>
                 </div>
-                </div>
             </main>
             <footer>
                 <div class="container-md ">
                     <p>&copy; 2023 ezKey</p>
                 </div>
             </footer>
+
+            <script type="module" src="js/models/formvalidator.js"></script>
+            <script type="module" src="js/models/request.js"></script>
+            <script type="module" src="js/models/formdata.js"></script>
+            <script type="module" src="js/signup.js"></script>
     </body>
 
 </html>

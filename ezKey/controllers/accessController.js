@@ -15,7 +15,7 @@ exports.createAccess = async (req, res) => {
     const newAccessCode = new AccessCode({ userid, expirationDate, visitorsName });
 
     // Create the access code by slicing the id to 6 characters
-    newAccessCode.accessCode = newAccessCode._id.toString().slice(0, 6)
+    newAccessCode.accessCode = newAccessCode._id.toString().slice(6, 12)
 
     const savedAccessCode = await newAccessCode.save();
 
@@ -33,10 +33,10 @@ exports.createAccess = async (req, res) => {
 
 exports.validateAcces = async (req, res) => {
   try {
-    const { accesscode } = req.body;
+    const { accessCode } = req.body;
 
     // Retrive access code
-    const getAccessCode = await AccessCode.findOne({ accesscode });
+    const getAccessCode = await AccessCode.findOne({ accessCode });
 
     if (!getAccessCode) {
       return res.status(401).json({ message: 'Invallied access code' });

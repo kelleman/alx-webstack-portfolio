@@ -42,12 +42,8 @@
     margin: auto;
 }
 
-div.structure input {
-    margin-bottom: 20px;
-    padding: 7px;
-    font-size: 18px;
-    border-radius: 3px;
-    border: solid 0.5px rgb(160, 160, 160);
+#otp {
+    max-width: 150px;
 }
 /*.features div {
     padding: 20px;

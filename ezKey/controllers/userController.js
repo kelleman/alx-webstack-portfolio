@@ -12,9 +12,10 @@ exports.register = async (req, res) => {
     const { firstname, lastname, email, phone, username, password } = req.body;
 
     // Check if the username already exists
+    // await User.deleteOne({ email });
     const existingUser = await User.findOne({ username });
     if (existingUser) {
-      return res.status(400).json({ message: 'Username already exists' });
+      return res.status(409).json({ message: 'Username already exists' });
     }
 
     // Hash the password
@@ -60,7 +61,7 @@ exports.register = async (req, res) => {
 exports.verifyOTP = async (req, res) => {
   try {
     const { email, otp } = req.body;
-
+    
     // Find the user by email
     const user = await User.findOne({ email });
 
