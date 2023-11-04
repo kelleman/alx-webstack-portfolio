@@ -126,11 +126,16 @@ export default class FormValidator {
       }
     }
 
-    if (errorsExist) {
-      this.errorMessageElement.innerText = 'Please correct the errors above.';
-    } else {
-      this.errorMessageElement.innerText = '';
+    try {
+      if (errorsExist) {
+        this.errorMessageElement.innerText = 'Please correct the errors above.';
+      } else {
+        this.errorMessageElement.innerText = '';
+      }
+    } catch (e){
+      
     }
+    
   }
 }
 
