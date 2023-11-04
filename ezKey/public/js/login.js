@@ -8,7 +8,7 @@ const error = '#name-error'
 const form = '#register'
 const formValidator = new FormValidator(form, error);
 const endpoint = 'api/v1/login'
-let registeredUser = ''
+let logInUser = ''
 
 submit.addEventListener("click", async (e) => {
     e.preventDefault();
@@ -16,19 +16,23 @@ submit.addEventListener("click", async (e) => {
     if (formValidator.validated) {
         const formdata = new FormData('register');
         const data = formdata.get()
-        //console.log(data);
-        const newUser = new Request(endpoint, 'POST', data);
-        registeredUser = await newUser.send()
-        if (!registeredUser.ok) {
-            const message = await registeredUser;
+        const newUserLogin = new Request(endpoint, 'POST', data);
+        logInUser = await newUserLogin.send()
+        if (!logInUser.ok) {
+            const message = await logInUser;
             formValidator.errorMessages['username'] = message.message
             formValidator.displayErrorMessages()
             delete formValidator.errorMessages['username']
             return
         }
-        /*document.querySelector('.otpemail').innerText = registeredUser.user.email
+
+        document.cookie = JSON.stringify(logInUser)
+        console.log(document.cookie)
+
+        document.location.href = '/dashboard'
+        /*document.querySelector('.otpemail').innerText = logInUser.user.email
         otpModal.show()*/
     }
 })
 
-//const registeredUser = newUser.send()
+//const logInUser = newUserLogin.send()
