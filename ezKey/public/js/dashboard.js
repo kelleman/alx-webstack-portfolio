@@ -35,6 +35,10 @@ submit.addEventListener("click", async (e) => {
             formValidator.displayErrorMessages()
             delete formValidator.errorMessages['visitorsName']
             return
+        }else if (accessCode.ok) {
+            formValidator.success = "duration"
+            formValidator.displayMessage("duration", message.message, "success")
+            message.message = ""
         }
         document.querySelector('.accessCodeDisplay').innerText = message.accessCode
         createAndAppendAccessCodeElement(accessCode, ".table");

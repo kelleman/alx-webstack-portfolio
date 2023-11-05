@@ -5,6 +5,13 @@
     font-size: 16px;
 }
 
+.hero .greenbth {
+    --bs-btn-hover-border-color: #0ecfa5;
+    --bs-btn-border-width: 2px;
+    --bs-btn-hover-color: #0ecfa5;
+    /* --bs-btn-hover-bg: #0ecfa5; */
+}
+
 body nav {
     background-color: rgba(61, 61, 61, 0.384);
     backdrop-filter: blur(7px)
@@ -59,11 +66,20 @@ input {
     font-weight: 100;
 }
 
+.success-message {
+    font-size: 15px;
+    color: rgb(28, 197, 70);
+    position: relative;
+    bottom: 20px;
+    font-weight: 100;
+}
+
 .invalid {
-    border: solid 0.5px rgba(255, 0, 0, 0.555);
+    border: solid 0.5px rgba(255, 0, 0, 0.555) !important;
     /*outline: rgba(255, 0, 0, 0.658) solid .5px;*/
     background-color: rgba(255, 173, 173, 0.11);
 }
+
 @keyframes bounce {
     0%, 100% {
         transform: translateY(0);

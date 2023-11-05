@@ -4,7 +4,7 @@
 <%- include('head.ejs', { cssfile: 'dashboard.css' }) %>
 
     <body>
-        <%- include('nav.ejs') %>
+        <%- include('nav.ejs', { loggedIn: true }) %>
             <main>
                 <div class="hero">
                     <div class="dashboard">

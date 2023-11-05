@@ -56,10 +56,14 @@ otpform.addEventListener("input", async (e) => {
         if (!registeredUserOtp.ok) {
             otpformValidator.displayErrorMessages()
             return
+        }else if (registeredUserOtp.ok) {
+            otpformValidator.success = "otp"
+            otpformValidator.displayMessage("otp", message.message, "success")
+            message.message = ""
         }
 
-        otpformValidator.displayErrorMessages()
-        delete otpformValidator.errorMessages['otp']
+        // otpformValidator.displayErrorMessages()
+        // delete otpformValidator.errorMessages['otp']
         // Redirect to a new URL
         setTimeout(function () {
             otpModal.hide()

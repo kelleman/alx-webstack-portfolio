@@ -4,6 +4,7 @@ export default class FormValidator {
     this.errorMessageElement = document.querySelector(errorMessageSelector);
     this.errorMessages = {};
     this.validated = false;
+    this.success = ""
 
     this.form.addEventListener('input', this.validateInput.bind(this));
     //this.form.addEventListener('submit', this.validateAllFields.bind(this));
@@ -59,12 +60,14 @@ export default class FormValidator {
       return 'This field is required.';
     }
 
-    if (fieldType === 'text' && (/\d/.test(value) || value.length < 3)) {
-      if (name !== "username") {
-        this.markFieldAsInvalid(input);
-        return /\d/.test(value) ? 'Only Alphabets allowed.' : 'Cannot be less than 3 letters.';
-      }
-      return !/^(?=.*[a-zA-Z])(?=.*[0-9])/.test(value) ? 'Only Alphanumeric allowed.' : value.length < 3 ? 'Cannot be less than 3 letters.' : '';;
+    if (fieldType === 'text' && (/\d/.test(value) || value.length < 3) && name != "username") {
+      this.markFieldAsInvalid(input);
+      return /\d/.test(value) ? 'Only Alphabets allowed.' : 'Cannot be less than 3 letters.';
+    }
+
+    if (name == "username" && (!/^[a-zA-Z0-9]*[a-zA-Z][a-zA-Z0-9]*$/.test(value) || value.length < 3)) {
+      this.markFieldAsInvalid(input);
+      return !/^[a-zA-Z0-9]*[a-zA-Z][a-zA-Z0-9]*$/.test(value) ? 'Only Alphanumeric or Alphabets allowed.' : 'Cannot be less than 3 letters.';
     }
 
     if (name == "otp") {
@@ -114,6 +117,7 @@ export default class FormValidator {
   }
 
   displayErrorMessages() {
+    this.displayMessage(this.success,"","error")
     let errorsExist = false;
     for (const fieldName in this.errorMessages) {
       const input = this.form.querySelector(`[name="${fieldName}"]`);
@@ -140,11 +144,45 @@ export default class FormValidator {
       } else {
         this.errorMessageElement.innerText = '';
       }
-    } catch (e){
+    } catch (e) {
 
     }
-    
+
   }
+
+  displayMessage(fieldName, message, messageType) {
+    const input = this.form.querySelector(`[name="${fieldName}"]`);
+    let remove =""
+    let existingContainer
+    let existingContainer2
+    if (messageType == "success") {
+      remove = "error"
+    } else {
+      remove = "success"
+    }
+    const removecontainerClass = `${remove}-message`;
+    const containerClass = `${messageType}-message`;
+    try {
+      existingContainer = input.parentElement.querySelector(`.${removecontainerClass}`);
+    } catch (e) {
+
+    }
+    if (existingContainer) {
+      existingContainer.remove();
+    }
+  
+    if (message) {
+      existingContainer2 = input.parentElement.querySelector(`.${containerClass}`);  
+      if (existingContainer2){
+        existingContainer2.remove();
+      }
+      const newContainer = document.createElement('div');
+      newContainer.className = containerClass;
+      newContainer.innerText = message;
+      input.parentElement.appendChild(newContainer);
+    }
+  }
+  
 }
 
 //const formValidator = new FormValidator('#myForm', '#errorMessage');

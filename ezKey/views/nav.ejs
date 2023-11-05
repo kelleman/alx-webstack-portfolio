@@ -10,14 +10,22 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="/" aria-current="page">Home</a>
                 </li>
+
+                <% loggedIn = typeof loggedIn === 'undefined' ? false : loggedIn; %>
+                <% if (loggedIn) { %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Logout</a>
+                    </li>
+                  <% } else { %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/signup">Signup</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                  <% } %>
                 <li class="nav-item">
-                    <a class="nav-link" href="/signup">Signup</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/login">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="/trackcode">Validate code</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>

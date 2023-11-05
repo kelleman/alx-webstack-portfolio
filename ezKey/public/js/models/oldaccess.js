@@ -19,7 +19,7 @@ export default function createAndAppendAccessCodeElement(accessCode, parentEleme
       <div class="visitorsname col">${accessCode.visitorsName}</div>
       <div class="code col">${accessCode.accessCode}</div>
       <div class="status ${statusClass} col">${isExpired ? 'Expired' : 'Active'}</div>
-      <div class="valid col">${day}, ${month}, ${time}</div>
+      <div class="valid col active">${day}, ${month}, ${time}</div>
       <hr>
     `;
     
@@ -28,7 +28,7 @@ export default function createAndAppendAccessCodeElement(accessCode, parentEleme
     
     // Set the serial number (sn) within the code element
     const snElement = codeElement.querySelector('.sn');
-    snElement.textContent = parentElement.childElementCount - 1;
+    snElement.textContent = parentElement.childElementCount + 1 ;
     
     // Append the code element as the last child of the parent element
     parentElement.insertBefore(codeElement, parentElement.firstChild);
