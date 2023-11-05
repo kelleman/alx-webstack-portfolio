@@ -1,0 +1,146 @@
+[33mcommit 2acb8a998bfde0576bf75bba2aec59d317a3ab95[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Balogun Adedotun <adedotun_balogun@yahoo.com>
+Date:   Sun Nov 5 16:40:23 2023 +0100
+
+    Track code and sucess message done
+
+[33mcommit 727b8c9237d5db1a76490a67bcc66c41f8ceeb21[m[33m ([m[1;31morigin/track_code[m[33m, [m[1;32mtrack_code[m[33m)[m
+Author: Balogun Adedotun <adedotun_balogun@yahoo.com>
+Date:   Sun Nov 5 12:24:28 2023 +0100
+
+    Dadhboard works noe
+
+[33mcommit 731e410efe245f9e753ff1dbd25d422520f669e8[m[33m ([m[1;31morigin/dashboard[m[33m, [m[1;32mdashboard[m[33m)[m
+Author: Balogun Adedotun <adedotun_balogun@yahoo.com>
+Date:   Sat Nov 4 16:44:44 2023 +0100
+
+    Login done
+
+[33mcommit 9d6b73e2c7c02bbef70b977df46ef9d38cc1e4b8[m
+Author: Balogun Adedotun <adedotun_balogun@yahoo.com>
+Date:   Sat Nov 4 16:24:54 2023 +0100
+
+    merged
+
+[33mcommit d32654445ac15b0083133a4bd029f2b173504537[m
+Author: Balogun Adedotun <adedotun_balogun@yahoo.com>
+Date:   Sat Nov 4 14:09:57 2023 +0100
+
+    Linking signup page
+
+[33mcommit f941d4aa11c3e82adf547403c8ea1934bc8a556d[m[33m ([m[1;31morigin/link_signup[m[33m, [m[1;32mlink_signup[m[33m)[m
+Merge: a77c44e f5403de
+Author: Balogun Adedotun <adedotun_balogun@yahoo.com>
+Date:   Fri Nov 3 17:32:14 2023 +0100
+
+    Merge branch 'main' of https://github.com/kelleman/alx-webstack-portfolio
+
+[33mcommit a77c44e38a51d1c347c0448447fa717f784982f1[m[33m ([m[1;31morigin/public_views[m[33m, [m[1;32mpublic_views[m[33m)[m
+Author: Balogun Adedotun <adedotun_balogun@yahoo.com>
+Date:   Fri Nov 3 17:25:20 2023 +0100
+
+    dashboard
+
+[33mcommit 89ba7cca37c0147bc2ac6553dbc1537e239d5494[m
+Author: Balogun Adedotun <adedotun_balogun@yahoo.com>
+Date:   Fri Nov 3 14:53:39 2023 +0100
+
+    working on the dash board
+
+[33mcommit f5403decd4d147eb01e17f44f710d6e76f0f0b77[m
+Author: kelleman <kellemanatser@gmail.com>
+Date:   Thu Nov 2 17:40:54 2023 +0100
+
+    hide secrets
+
+[33mcommit 079b7ec4783046525d8d581f188763bcf987d001[m
+Author: Godfrey <43983437+kelleman@users.noreply.github.com>
+Date:   Thu Nov 2 17:39:18 2023 +0100
+
+    Delete .env
+
+[33mcommit 26bbeef1a724b49f43a4f38cb9754c652343cd7a[m
+Merge: 70b5578 a653af5
+Author: kelleman <kellemanatser@gmail.com>
+Date:   Thu Nov 2 17:13:12 2023 +0100
+
+    user authentication endpoints working
+
+[33mcommit 70b5578c26b276fde2794fa3faaff5ca058542a4[m
+Author: kelleman <kellemanatser@gmail.com>
+Date:   Thu Nov 2 16:42:20 2023 +0100
+
+    .
+
+[33mcommit a653af5fcb267e035fbdd11706d90adb20aa19e5[m
+Author: BAlogun Adedotun <Adedotun_balogun@yahoo.com>
+Date:   Tue Oct 31 16:33:27 2023 +0100
+
+    landing, login and sign up pages ui creates but nityes functioning
+
+[33mcommit f79280c7288e8affb1de76c93fb5ceed6c70c407[m
+Author: BAlogun Adedotun <Adedotun_balogun@yahoo.com>
+Date:   Mon Oct 30 13:07:49 2023 +0100
+
+    Public and views folder Created, App.js also edited
+
+[33mcommit efa7e0b8f95cd76b924faf3ada7110e6c13dbb75[m[33m ([m[1;31morigin/acess_code[m[33m)[m
+Author: BAlogun Adedotun <Adedotun_balogun@yahoo.com>
+Date:   Sun Oct 29 17:02:55 2023 +0100
+
+    accessController, models and routes work, but no validation has been inplimented
+
+[33mcommit df33b8eec9037ffdb490ae9e8b74ead2e76d5ac2[m
+Merge: 19457e6 90acc3b
+Author: kelleman <kellemanatser@gmail.com>
+Date:   Sat Oct 28 14:46:40 2023 +0100
+
+    Merge branch 'main' of https://github.com/kelleman/alx-webstack-portfolio-project
+
+[33mcommit 19457e6de9345a56399ca743805a38215ee7d460[m
+Author: kelleman <kellemanatser@gmail.com>
+Date:   Sat Oct 28 14:46:25 2023 +0100
+
+    user authentication completed
+
+[33mcommit efe477a0c36e9b5ad08079f8219299def897ebe0[m
+Author: kelleman <kellemanatser@gmail.com>
+Date:   Sat Oct 28 14:44:45 2023 +0100
+
+    user authentication completed
+
+[33mcommit 90acc3b89ba3199cec8f461b2d58fe4aceaa8c63[m
+Author: BAlogun Adedotun <Adedotun_balogun@yahoo.com>
+Date:   Mon Oct 23 09:18:35 2023 +0100
+
+    New files
+
+[33mcommit f53168954c778e33029cf868c8eb5a6348c1e880[m
+Author: kelleman <kellemanatser@gmail.com>
+Date:   Mon Oct 16 10:15:40 2023 +0100
+
+    .
+
+[33mcommit 69e4bdc3cb10138baf35cca957712489023c012f[m
+Author: kelleman <kellemanatser@gmail.com>
+Date:   Mon Oct 16 00:19:31 2023 +0100
+
+    .
+
+[33mcommit 92242fc9c9626d636ffed29e6cced1a4b2cd2e43[m
+Author: kelleman <kellemanatser@gmail.com>
+Date:   Mon Oct 16 00:07:19 2023 +0100
+
+    .
+
+[33mcommit 1e552cf3a2ed5462735427f59d141f24cb8fb276[m
+Author: kelleman <kellemanatser@gmail.com>
+Date:   Sun Oct 15 20:26:53 2023 +0100
+
+    .
+
+[33mcommit 6d577943525dd811d092083798c674abdf1763f0[m
+Author: Godfrey <43983437+kelleman@users.noreply.github.com>
+Date:   Sat Oct 14 10:46:53 2023 +0100
+
+    Initial commit
