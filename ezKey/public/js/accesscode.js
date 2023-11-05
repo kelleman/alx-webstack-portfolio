@@ -25,14 +25,20 @@ submit.addEventListener("click", async (e) => {
             formValidator.displayErrorMessages()
             delete formValidator.errorMessages['username']
             return
-        }else if (logInUser.ok) {
+        } else if (logInUser.ok) {
             formValidator.success = "username"
+            const currentDate = new Date(message.expirationDate);
+
+            // Step 2: Format the date as a string
+            const options = { month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+            const formattedDate = new Intl.DateTimeFormat('en-US', options).format(currentDate);
+
+            message.message = `${message.message} for ${message.visitorsName} till ${formattedDate}`
             formValidator.displayMessage("username", message.message, "success")
             message.message = ""
         }
 
         //document.cookie = JSON.stringify(logInUser)
-        //console.log(logInUser)
 
         /*document.location.href = '/dashboard'*/
         /*document.querySelector('.otpemail').innerText = logInUser.user.email
