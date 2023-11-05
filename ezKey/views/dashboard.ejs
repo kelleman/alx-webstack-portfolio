@@ -8,22 +8,31 @@
             <main>
                 <div class="hero">
                     <div class="dashboard">
+                    <h1 class="welcomeparent container-lg">Welcome <span class="welcomeuser"><%= data.username %></span></h1>
                         <div class="container-lg row d-flex align-items-lg-center justify-content-center">
+                            <!-- <h1>Welcome <span class="welcomeuser">User</span></h1> -->
                             <div class="col-xl-6 col-lg-6 col-md-12">
-                                <form class="">
+                                <form class="" id="accesscode">
                                     <div class="structure">
                                         <h1>Generate access code</h1>
-                                        <label for="visitorsname">Visitors name</label>
-                                        <input type="text" name="visitorsname" id="visitorsname"
-                                            placeholder="Input visitors name" required>
+                                        <div class="form-group">
+                                            <label for="visitorsName">Visitors name</label>
+                                            <input type="text" name="visitorsName" id="visitorsname"
+                                                placeholder="Input visitors name" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="duration">Duration</label>
+                                            <input type="range" name="duration" id="duration" min="0" max="5" step="1"
+                                                value="0">
+                                        </div>
+                                        <div class="container-fluid row row-col-2 infos">
+                                            <p class="col"><span id="selectedHour">1</span> hours</p>
+                                            <p class="col accessParent">Access Code: <span class="accessCodeDisplay"></span></p>
+                                        </div>
 
-                                        <label for="duration">Duration</label>
-                                        <input type="range" name="duration" id="duration" min="0" max="5" step="1">
-                                        <p><span id="selectedHour">1</span> hours</p>
-
+                                        <!-- <div id="name-error"></div> -->
                                         <div class="btnparent">
-                                            <button onclick="window.location.href = '/sihnup'" type="button"
-                                                class="btn greenbth">Generate</button>
+                                            <button type="button" class="btn greenbth" id="submit">Generate</button>
                                         </div>
                                     </div>
                                 </form>
@@ -31,16 +40,43 @@
                             <div class=" history col-xg-6 col-lg-6 col-md-12">
                                 <div class="">
                                     <h2>Access Code History</h2>
-                                    <div class="table container-fluid">
+                                    <div class="tablehead container-fluid">
                                         <div class="title row row-col-1">
                                             <div class="sn col">Sn</div>
-
                                             <div class="visitorsname col">Name</div>
                                             <div class="code col">Code</div>
                                             <div class="status col">Status</div>
+                                            <div class="valid col">Expires by</div>
                                             <hr>
                                         </div>
-                                        <div class="createdcode row row-col-1">
+                                    </div>
+                                    <div class="table container-fluid">
+                                        <% data.GeneratedAcccessCodes.forEach(function(item, index) { %>
+                                            <div class="createdcode row row-col-1">
+                                                <div class="sn col"><%= data.GeneratedAcccessCodes.length - index %></div>
+                                                <div class="visitorsname col"><%= item.visitorsName %></div>
+                                                <div class="code col"><%= item.accessCode%></div>
+                                                <% let currentDate = new Date(); %>
+                                                <% if (currentDate > item.expirationDate) { %>
+                                                    <div class="status inactive col">Expired</div>
+                                                <% } else { %>
+                                                    <div class="status active col">Active</div>
+                                                <% } %>
+                                                <div class="valid col <% if (currentDate > item.expirationDate) { %>
+                                                    inactive
+                                                    <% } else { %>
+                                                    active
+                                                    <% } %>">
+                                                    <% let expirationDate = new Date(item.expirationDate); %>
+                                                    <% let day = expirationDate.getDate(); %>
+                                                    <% let month = expirationDate.toLocaleString('en-US', { month: 'short' }); %>
+                                                    <% let time = expirationDate.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' }); %>
+                                                    <%= `${day}, ${month}, ${time}` %>
+                                                </div>
+                                                <hr>
+                                            </div>
+                                        <% }); %>
+                                        <!-- <div class="createdcode row row-col-1">
                                             <div class="sn col">1</div>
                                             <div class="visitorsname col">James</div>
                                             <div class="code col">12345</div>
@@ -53,7 +89,7 @@
                                             <div class="code col">12d34dfg5</div>
                                             <div class="status active col">Active</div>
                                             <hr>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -67,15 +103,11 @@
                     <p>&copy; 2023 ezKey</p>
                 </div>
             </footer>
-            <script>
-                const hourlyRange = document.getElementById("duration");
-                const selectedHour = document.getElementById("selectedHour");
-                selectedHour.textContent = hourlyRange.value;
-                hourlyRange.addEventListener("input", function () {
-                    const selectedValue = hourlyRange.value;
-                    selectedHour.textContent = selectedValue;
-                });
-            </script>
+
+            <script type="module" src="js/models/formvalidator.js"></script>
+            <script type="module" src="js/models/request.js"></script>
+            <script type="module" src="js/models/formdata.js"></script>
+            <script type="module" src="js/dashboard.js"></script>
     </body>
 
 </html>

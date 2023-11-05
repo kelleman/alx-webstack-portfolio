@@ -17,22 +17,61 @@
 
 .history {
     align-self: start;
-    margin-top: 63px;
+    /*margin-top: 63px;*/
     padding: 0px 13.5px;
 }
 
-.status.active {
+.active {
     color: green;
 }
 
-.status.inactive {
+.inactive {
     color: red;
 }
 
+.welcomeuser {
+    font-size: inherit;
+}
+
+.accessParent {
+    font-size: 19px;
+    font-weight: 700;
+}
+.accessCodeDisplay {
+    color: #02ad88;
+    font-size: 32px;
+}
 .history .table {
-    overflow: scroll;
-    height: 300px;
+    overflow-y: auto;
+    height: 350px;
     padding-right: 40px;
+}
+.tablehead{
+    padding-right: 50px;
+}
+.history .table::-webkit-scrollbar {
+    width: 9px;
+}
+.dashboard {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcomeparent {
+    padding-bottom: 40px;
+}
+.history .table::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.history .table::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 6px;
+}
+
+.history .table::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 .hero .greenbth {
@@ -65,10 +104,12 @@ div.structure input {
     border-radius: 3px;
     border: solid 0.5px rgb(160, 160, 160);
 }
+
 /*.features div {
     padding: 20px;
 }*/
 @media (min-width: 992px) {
+
     /* Large screens (wider than 992px) */
     .hero .greenbth {
         --bs-btn-padding-y: .4rem;
@@ -78,6 +119,7 @@ div.structure input {
         --bs-btn-font-size: 1.5rem;
         --bs-btn-border-radius: .2rem;
     }
+
     .hero {
         min-height: 100vh;
         padding: 160px 0;
@@ -87,6 +129,4 @@ div.structure input {
     }
 }
 
-@media (max-width: 1184px) {
-
-}
+@media (max-width: 1184px) {}

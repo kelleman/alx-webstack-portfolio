@@ -5,11 +5,14 @@ const AccessCode = require('../models/accessModel');
 
 exports.createAccess = async (req, res) => {
   try {
-    const { userid, visitorsName } = req.body;
+    const {visitorsName, duration } = req.body;
 
+    const token = JSON.parse(req.cookies.Auth || '{}');
+    const user = jwt.verify(token, process.env.JWT_SECRET)
+    const userid = user.userId
     // Set the expiration date to 5 hours from now
     const expirationDate = new Date();
-    expirationDate.setHours(expirationDate.getHours() + 5);
+    expirationDate.setHours(expirationDate.getHours() + Number(duration));
 
     // Create a new Access code
     const newAccessCode = new AccessCode({ userid, expirationDate, visitorsName });
@@ -21,7 +24,9 @@ exports.createAccess = async (req, res) => {
 
     res.status(200).json({
       message: 'Access code created',
+      visitorsName: savedAccessCode.visitorsName,
       accessCode: savedAccessCode.accessCode,
+      expirationDate: savedAccessCode.expirationDate,
     });
 
   } catch (error) {

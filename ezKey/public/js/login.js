@@ -26,10 +26,10 @@ submit.addEventListener("click", async (e) => {
             return
         }
 
-        document.cookie = JSON.stringify(logInUser)
-        console.log(document.cookie)
+        //document.cookie = JSON.stringify(logInUser)
+        //console.log(document.cookie)
 
-        document.location.href = '/dashboard'
+        /*document.location.href = '/dashboard'*/
         /*document.querySelector('.otpemail').innerText = logInUser.user.email
         otpModal.show()*/
     }

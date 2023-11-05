@@ -1,13 +1,14 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
 const db = require('./config/connection');
 const userRoutes = require('./routes/userRoutes');
 const accessCodeRoutes = require('./routes/accessCodeRoutes');
 const uiRoutes = require('./routes/uiRoutes');
 require('dotenv').config();
 
-
+app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // Serve static files from the 'public' directory

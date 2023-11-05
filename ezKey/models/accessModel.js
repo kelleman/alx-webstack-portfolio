@@ -24,6 +24,6 @@ const accessCodeSchema = new Schema({
 });
 
 
-const AccessCode = mongoose.model('Access', accessCodeSchema);
+const AccessCode = mongoose.model('AccessCode', accessCodeSchema);
 
 module.exports = AccessCode;

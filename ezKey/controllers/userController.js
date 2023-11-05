@@ -2,7 +2,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/userModel');
 const sendEmail = require('../utils/sendEmail')
-const { generateOTP,sendOTP,sendNewOTP } = require('../utils/sendEmail'); 
+const { generateOTP, sendOTP, sendNewOTP } = require('../utils/sendEmail');
 
 const uuid = require('uuid');
 
@@ -12,7 +12,7 @@ exports.register = async (req, res) => {
     const { firstname, lastname, email, phone, username, password } = req.body;
 
     // Check if the username already exists
-    await User.deleteOne({ email });
+    // await User.deleteOne({ email });
     const existingUser = await User.findOne({ username });
     if (existingUser) {
       return res.status(409).json({ message: 'Username already exists' });
@@ -24,7 +24,7 @@ exports.register = async (req, res) => {
     // Generate a random OTP
     const otp = generateOTP();
 
-   
+
     const newUser = new User({
       firstname,
       lastname,
@@ -32,7 +32,7 @@ exports.register = async (req, res) => {
       phone,
       username,
       password: hashedPassword,
-      otp, 
+      otp,
     });
 
     const savedUser = await newUser.save();
@@ -61,7 +61,7 @@ exports.register = async (req, res) => {
 exports.verifyOTP = async (req, res) => {
   try {
     const { email, otp } = req.body;
-    
+
     // Find the user by email
     const user = await User.findOne({ email });
 
@@ -143,10 +143,11 @@ exports.login = async (req, res) => {
 
     // Generate a token
     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
-      expiresIn: '1h',
+      expiresIn: '30m',
     });
-    
-    res.status(200).json({ message: 'Logged in successfully', token });
+
+    res.cookie('Auth', JSON.stringify(token));
+    res.redirect(301, '/dashboard');
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Server error' });
@@ -206,11 +207,11 @@ exports.resetPasswordVerify = async (req, res) => {
     res.status(200).json({ message: 'Password updated successfully' });
     const newOTP = generateOTP();
 
-//user.otp = null to clear it from the document
-user.otp = null; 
+    //user.otp = null to clear it from the document
+    user.otp = null;
 
-// Save the user document with the OTP  null value
-await user.save();
+    // Save the user document with the OTP  null value
+    await user.save();
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Server error' });

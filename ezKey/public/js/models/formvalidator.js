@@ -79,6 +79,14 @@ export default class FormValidator {
       return /[a-zA-Z]/.test(value) ? 'Only Numbers allowed.' : 'Cannot be less than 3 letters.';
     }
 
+    if (fieldType === 'range') {
+      if (value > 0) {
+        return ''
+      }
+      this.markFieldAsInvalid(input);
+      return 'Cannot be less than 0 houres';
+    }
+
     if (fieldType === 'password' && value.length < 6) {
       this.markFieldAsInvalid(input);
       return 'Cannot be less than 6 characters.';
@@ -133,7 +141,7 @@ export default class FormValidator {
         this.errorMessageElement.innerText = '';
       }
     } catch (e){
-      
+
     }
     
   }

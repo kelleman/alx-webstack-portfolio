@@ -26,14 +26,16 @@ export default class Request {
         return rez
         //throw new Error(`HTTP error! Status: ${response.status}`);
       }
-
-      let result = await response.json();
-      result.ok = true;
-      return result
+      //console.log(response)
+      if (response.redirected) {
+        window.location.href = response.url;
+      } else {
+        let result = await response.json();
+        result.ok = true;
+        return result
+      }
       // Change to response.text() if not JSON
       //console.log('Request successful. Response:', result);
-
-      return result;
     } catch (error) {
       console.error('Error:', error);
       throw error;
