@@ -107,10 +107,42 @@ input {
 
 footer {
     color: white;
-    background-color: #02ad88;
-    height: 200px;
+    background-color: #019474;
+    /* background-color: #02ad88; */
+    /* height: 200px; */
     display: flex;
     align-items: center;
+    list-style: none !important;
+}
+
+footer ul.ftco-footer-social li {
+    list-style: none !important;
+    padding-left: 50px;
+}
+footer a{
+    color: white;
+    text-decoration: none;
+}
+footer li i{
+    font-size: 23px;
+}
+
+.icon {
+    background-color: rgba(0, 0, 0, 0.322);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.colorc {
+    background-color: #147e67;
+}
+.con-info {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
 }
 
 @media (min-width: 992px) {

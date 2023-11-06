@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<%- include('head.ejs', { cssfile: 'signup.css' }) %>
+<%- include('head.ejs', { cssfile: 'signup.css', title: 'Signup' }) %>
 
     <body>
         <!-- Modal -->
@@ -85,11 +85,7 @@
                     </div>
                 </div>
             </main>
-            <footer>
-                <div class="container-md ">
-                    <p>&copy; 2023 ezKey</p>
-                </div>
-            </footer>
+            <%- include('footer.ejs') %>
 
             <script type="module" src="js/models/formvalidator.js"></script>
             <script type="module" src="js/models/request.js"></script>
